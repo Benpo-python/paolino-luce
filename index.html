@@ -242,7 +242,7 @@ footer .logo small{color:#a89a84}
    <div class="campo"><label for="m">Mittente</label><input id="m" required placeholder="Un ammiratore devoto"></div>
    <div class="campo"><label for="o">Oggetto</label><select id="o"><option>Omaggio alla bellezza</option><option>Richiesta di udienza</option><option>Lezione di bachata</option><option>Dichiarazione di ammirazione</option></select></div>
    <div class="campo pieno"><label for="t">Testo del telegramma</label><textarea id="t" required placeholder="AMMIRO VOSTRO CIUFFO STOP CHIEDO UDIENZA STOP"></textarea></div>
-   <div class="campo pieno" style="align-items:center"><button class="btn btn-p">Spedite il telegramma</button></div>
+   <div class="campo pieno" style="align-items:center"><button class="btn btn-p">Spedite il telegramma via WhatsApp</button></div>
    <div class="esito" id="esito"></div>
   </form>
  </div>
@@ -255,8 +255,11 @@ footer .logo small{color:#a89a84}
 
 <script>
 document.getElementById("modulo").addEventListener("submit",function(e){e.preventDefault();var es=document.getElementById("esito");
+ var t="TELEGRAMMA PER IL SUPERUOMO STOP\n\nMITTENTE: "+document.getElementById("m").value.toUpperCase()+" STOP\nOGGETTO: "+document.getElementById("o").value.toUpperCase()+" STOP\n\n"+document.getElementById("t").value.toUpperCase()+" STOP\n\nCON DEVOZIONE STOP VIVA LA REPUBBLICA DOMINICANA STOP";
+ var n=["39","351","706","4544"].join("");
  es.style.display="block";
- es.textContent="TELEGRAMMA RICEVUTO STOP L'UOMO LO LEGGERA' DOPO IL RITUALE DI BELLEZZA MATTUTINO STOP RISPOSTA ATTESA IN DATA DA DESTINARSI STOP";});
+ es.textContent="TELEGRAMMA PRONTO STOP SI APRE WHATSAPP STOP PREMETE INVIA PER RECAPITARLO ALL'UOMO STOP";
+ window.open("https://wa.me/"+n+"?text="+encodeURIComponent(t),"_blank");});
 </script>
 </body>
 </html>
